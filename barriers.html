@@ -1,0 +1,15 @@
+<h1>memory barriers</h1>
+
+<p>ACQUIRE operations:  
+It guarantees that all memory operations after the ACQUIRE operation will appear to happen after the ACQUIRE
+operation with respect to the other components of the system.
+ACQUIRE operations include LOCK operations and both smp_load_acquire() and smp_cond_acquire() operations. 
+The later builds the necessary ACQUIRE semantics from relying on a control dependency and smp_rmb().</p>
+
+
+<p>RELEASE operations:
+
+It guarantees that all memory operations before the RELEASE operation will appear to 
+happen before the RELEASE operation with respect to the other components of thesystem.
+RELEASE operations include UNLOCK operations and smp_store_release() operations. 
+Memory operations that occur after a RELEASE operation may appear to happen before it completes.</p>
